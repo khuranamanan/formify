@@ -14,6 +14,9 @@ export async function getFormById(formId: string) {
       where: {
         id: formId,
       },
+      include: {
+        questions: true,
+      },
     });
   } catch (error) {
     return { error: "Error getting form" };

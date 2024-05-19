@@ -24,6 +24,7 @@ export async function createForm() {
     newForm = await db.form.create({
       data: {
         title: "Untitled Form",
+        response: {},
         userId: session.id,
       },
     });

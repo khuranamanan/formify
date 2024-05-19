@@ -19,6 +19,9 @@ export async function getFormsByUserId(userId?: string) {
       where: {
         userId: existingUser.id,
       },
+      include: {
+        questions: true,
+      },
     });
   } catch (error) {
     return { error: "Error fetching forms" };
