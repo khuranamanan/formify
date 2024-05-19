@@ -128,11 +128,13 @@ function Toolbar({ initialData, preview }: ToolbarProps) {
         )}
       </div>
 
-      <CoverDialog
-        open={coverDialogOpen}
-        onOpenChange={(v: boolean) => setCoverDialogOpen(v)}
-        formId={initialData.id}
-      />
+      {coverDialogOpen && (
+        <CoverDialog
+          open={coverDialogOpen}
+          onOpenChange={(v: boolean) => setCoverDialogOpen(v)}
+          formId={initialData.id}
+        />
+      )}
     </>
   );
 }
