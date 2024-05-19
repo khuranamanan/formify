@@ -55,9 +55,6 @@ export default async function RootLayout({
             <Toaster />
             {children}
 
-            <div className="absolute top-4 right-4">
-              <ModeToggle />
-            </div>
             <TailwindIndicator />
           </ThemeProvider>
         </body>

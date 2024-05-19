@@ -1,5 +1,6 @@
 import { PencilIcon } from "@/assets/icons";
 import LoginButton from "@/components/auth/login-button";
+import { ModeToggle } from "@/components/mode-toggle";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
             </Button>
           </LoginButton>
         </div>
+      </div>
+      <div className="absolute top-4 right-4">
+        <ModeToggle />
       </div>
     </main>
   );

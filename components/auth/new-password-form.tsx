@@ -19,7 +19,7 @@ import { Input } from "../ui/input";
 import FormSuccess from "../form-success";
 import FormError from "../form-error";
 import { Button } from "../ui/button";
-import { newPassword } from "@/actions/new-password";
+import { newPassword } from "@/actions/auth/new-password";
 
 function NewPasswordForm() {
   const searchParams = useSearchParams();

@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import FormSuccess from "../form-success";
 import FormError from "../form-error";
 import { BeatLoader } from "react-spinners";
-import { newVerification } from "@/actions/new-verification";
+import { newVerification } from "@/actions/auth/new-verification";
 
 function NewVerificationForm() {
   const [error, setError] = useState<string | undefined>();

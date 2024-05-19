@@ -18,7 +18,7 @@ import FormError from "../form-error";
 import { Button } from "../ui/button";
 import { useForm } from "react-hook-form";
 import { ResetSchema } from "@/schemas";
-import { reset } from "@/actions/reset";
+import { reset } from "@/actions/auth/reset";
 
 function ResetForm() {
   const [error, setError] = useState<string | undefined>("");

@@ -18,7 +18,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import FormError from "../form-error";
 import FormSuccess from "../form-success";
-import { login } from "@/actions/login";
+import { login } from "@/actions/auth/login";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "../ui/input-otp";
@@ -47,7 +47,6 @@ function LoginForm() {
   });
 
   function onSubmit(data: z.infer<typeof LoginSchema>) {
-    console.log("data", data);
     startTransition(() => {
       login(data, callbackUrl)
         .then((response) => {

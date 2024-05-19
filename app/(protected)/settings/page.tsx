@@ -1,6 +1,6 @@
 "use client";
 
-import { settings } from "@/actions/settings";
+import { settings } from "@/actions/auth/settings";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { SettingsSchema } from "@/schemas";
