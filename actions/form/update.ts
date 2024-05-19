@@ -25,7 +25,10 @@ export async function updateForm(formId: string, data: Partial<Form>) {
         id: formId,
         userId: session.id,
       },
-      data,
+      data: {
+        ...data,
+        response: data.response ?? undefined,
+      },
     });
   } catch (error) {
     return { error: "Error updating form" };
