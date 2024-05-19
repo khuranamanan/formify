@@ -6,6 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 interface FormNavbarProps {
   form: Form;
@@ -41,6 +42,7 @@ function FormNavbar({ form, tabValue, setTabValue }: FormNavbarProps) {
       </div>
 
       <div className="flex items-center gap-x-2">
+        <ModeToggle />
         <Publish initialData={form} />
         <Menu formId={form.id} />
       </div>
