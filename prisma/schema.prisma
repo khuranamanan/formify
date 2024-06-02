@@ -111,7 +111,7 @@ model Question {
   description String?
   required    Boolean       @default(false)
   type        QuestionTypes
-  options     String[]      @default([])
+  options     Json          @default("[]")
 
   formId String? @db.ObjectId
   Form   Form?   @relation(fields: [formId], references: [id], onDelete: Cascade)

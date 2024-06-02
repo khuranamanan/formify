@@ -11,9 +11,11 @@ import { Button } from "@/components/ui/button";
 import { createFormField } from "@/actions/form/create-form-field";
 import { PlusCircle } from "lucide-react";
 import FormFieldDialog from "./form-field-dialog";
+import FormRenderer from "./form-renderer";
+import { FormWithQuestions } from "@/types";
 
 interface FormPageContentProps {
-  form: Form;
+  form: FormWithQuestions;
 }
 
 function FormPageContent({ form }: FormPageContentProps) {
@@ -46,6 +48,10 @@ function FormPageContent({ form }: FormPageContentProps) {
               initialContent={form.description}
             />
             {/* {JSON.stringify(form, null, 2)} */}
+
+            {form.questions.length > 0 && (
+              <FormRenderer questions={form.questions} />
+            )}
 
             <div className="fixed bottom-0 right-o left-0 p-4 w-full flex justify-center bg-background shadow-2xl">
               <Button onClick={() => setAddFieldDialogOpen(true)}>

@@ -6,6 +6,7 @@ import { db } from "@/lib/db";
 import { AddFormFieldSchema } from "@/schemas/forms";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
+import { nanoid } from "nanoid";
 
 export const createFormField = async (
   formId: string,
@@ -30,7 +31,10 @@ export const createFormField = async (
       data: {
         ...field,
         options: field.options
-          ? field.options.map((option) => option.value)
+          ? field.options.map((option) => ({
+              id: nanoid(),
+              value: option.value.toString(),
+            }))
           : [],
         formId,
       },
